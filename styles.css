@@ -22,7 +22,7 @@ body {
 }
 
 .display {
-  flex: 1; 
+  flex: 2; 
   border: 1px solid purple; 
 }
 
