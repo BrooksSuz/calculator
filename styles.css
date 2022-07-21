@@ -9,11 +9,11 @@ html {
 body {
   display: flex;
   justify-content: center;
-  border: 1px solid blue;
 }
 
 .container {
-  border: 1px solid violet;
+  border: 1px solid black;
+  border-radius: 5px;
   width: 20%;
   min-height: 50vh;
   display: flex;
@@ -22,30 +22,35 @@ body {
 }
 
 .display {
+  border-radius: 5px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  font-size: 370%;
   flex: 2; 
-  border: 1px solid purple; 
 }
 
 .row-1 {
   display: flex;
   flex: 1; 
-  border: 1px solid black;
 }
 
 .row-2 {
   display: flex;
   flex: 1;
-  border: 1px solid red;
 }
 
 .row-3 {
   display: flex;
   flex: 1;
-  border: 1px solid green;
 }
 
 .row-4 {
   display: flex;
   flex: 1; 
-  border: 1px solid blue; 
+}
+
+button {
+  border-radius: 5px;
 }
