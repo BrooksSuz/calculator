@@ -6,6 +6,46 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  border: 1px solid blue;
+}
+
 .container {
-  border: 2px solid black;
+  border: 1px solid violet;
+  width: 20%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+}
+
+.display {
+  flex: 1; 
+  border: 1px solid purple; 
+}
+
+.row-1 {
+  display: flex;
+  flex: 1; 
+  border: 1px solid black;
+}
+
+.row-2 {
+  display: flex;
+  flex: 1;
+  border: 1px solid red;
+}
+
+.row-3 {
+  display: flex;
+  flex: 1;
+  border: 1px solid green;
+}
+
+.row-4 {
+  display: flex;
+  flex: 1; 
+  border: 1px solid blue; 
 }
