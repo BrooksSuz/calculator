@@ -7,9 +7,7 @@ display.textContent = displayValue;
 
 btns.forEach(btn => {
   btn.addEventListener('click', function displayNumber() {
-    if (typeof parseInt(btn.textContent) === 'number') {
-      displayValue = btn.textContent; 
-      display.textContent = displayValue; 
-    }
+    displayValue = btn.textContent; 
+    display.textContent = displayValue; 
   }); 
 });
