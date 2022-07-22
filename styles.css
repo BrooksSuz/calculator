@@ -21,6 +21,12 @@ body {
   justify-content: center;
 }
 
+.row-container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+}
+
 .display {
   border-radius: 5px;
   background-color: lightgray;
@@ -28,7 +34,7 @@ body {
   justify-content: end;
   align-items: flex-end;
   font-size: 370%;
-  flex: 2; 
+  flex: .5;
 }
 
 .row-1 {
@@ -49,8 +55,4 @@ body {
 .row-4 {
   display: flex;
   flex: 1; 
-}
-
-button {
-  border-radius: 5px;
 }
