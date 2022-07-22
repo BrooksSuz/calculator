@@ -56,3 +56,10 @@ body {
   display: flex;
   flex: 1; 
 }
+
+button {
+  flex: 1;
+  margin: 3px;
+  background-color: gray;
+  border-radius: 5px;
+}
