@@ -3,7 +3,7 @@ const btns = document.querySelectorAll('button');
 const display = document.querySelector('.display'); 
 const nums = /[0-9]/; 
 const mdas = /x|\/|\+|\-/;
-const arr = []; 
+let arr = []; 
 let currentValue; 
 let displayValue;  
 
@@ -22,8 +22,10 @@ btns.forEach(btn => {
 });
 
 function add() {
-  arr.push(displayValue); 
+  arr.push(parseInt(displayValue)); 
   if (arr.length = 2) {
-    arr = arr.reduce((a, b) => a + b); 
+    arr = [arr.reduce((a, b) => a + b)]; 
   }
+  displayValue = arr; 
+  display.textContent = displayValue; 
 } 
