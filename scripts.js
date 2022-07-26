@@ -3,7 +3,8 @@ const btns = document.querySelectorAll('button');
 const display = document.querySelector('.display'); 
 const nums = /[0-9]/; 
 const mdas = /x|\/|\+|\-/;
-let previousBtn; 
+let previousBtn = ''; 
+let previousNum = ''; 
 let arr = []; 
 let currentValue = 0; 
 let displayValue = 0; 
@@ -28,15 +29,19 @@ btns.forEach(btn => {
       } else if (e.target.textContent === '-') {
         subtract(); 
       }
-    } else if (e.target.textContent === '=') {
-      if (previousBtn.textContent === 'x') {
+    } else if (e.target === btns[16]) {
+      if (previousBtn === 'x') {
         multiply(); 
-      } else if (previousBtn.textContent === '/') {
+        previousBtn = ''; 
+      } else if (previousBtn === '/') {
         divide(); 
-      } else if(previousBtn.textContent === '+') {
+        previousBtn = ''; 
+      } else if(previousBtn === '+') {
         add(); 
-      } else if (previousBtn.textContent === '-') {
+        previousBtn = ''; 
+      } else if (previousBtn === '-') {
         subtract(); 
+        previousBtn = ''; 
       }
     } else if (e.target === btns[0]) {
       arr = []; 
@@ -46,28 +51,6 @@ btns.forEach(btn => {
     }
   }); 
 });
-
-function add() {
-  arr.push(parseInt(displayValue));
-
-  if (arr.length === 2) {
-    arr = [arr.reduce((a, b) => a + b)]; 
-    display.textContent = arr; 
-  } 
-
-  currentValue = 0; 
-} 
-
-function subtract() {
-  arr.push(parseInt(displayValue)); 
-
-  if (arr.length === 2) {
-    arr = [arr.reduce((a, b) => a - b)]; 
-    display.textContent = arr; 
-  } 
-
-  currentValue = 0; 
-} 
 
 function multiply() {
   arr.push(parseInt(displayValue)); 
@@ -82,6 +65,8 @@ function multiply() {
   }
 
   currentValue = 0; 
+  displayValue = 0; 
+  previousBtn = 'x'; 
 } 
 
 function divide() {
@@ -97,4 +82,32 @@ function divide() {
   }
 
   currentValue = 0; 
+  displayValue = 0; 
+  previousBtn = '/'; 
+} 
+
+function add() {
+  arr.push(parseInt(displayValue));
+
+  if (arr.length === 2) {
+    arr = [arr.reduce((a, b) => a + b)]; 
+    display.textContent = arr; 
+  } 
+
+  currentValue = 0; 
+  displayValue = 0; 
+  previousBtn = '+'; 
+} 
+
+function subtract() {
+  arr.push(parseInt(displayValue)); 
+
+  if (arr.length === 2) {
+    arr = [arr.reduce((a, b) => a - b)]; 
+    display.textContent = arr; 
+  } 
+
+  currentValue = 0; 
+  displayValue = 0; 
+  previousBtn = '-'; 
 } 
